@@ -1,6 +1,3 @@
-/**
- * Created by Ashish Astha on 5/15/2016.
- */
 (function () {
     var socket = null;
     var chat = (function(){
