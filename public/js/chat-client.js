@@ -1,6 +1,6 @@
 (function () {
     var socket = null;
-    var chat = (function(){
+    (function(){
         var rooms = [];
         var $btnStatus = $("#status");
         var $roomName = $("#roomname");
@@ -66,10 +66,6 @@
             $nickname.text("");
             $roomName.text("");
             $chatWindow.html("");
-        }
-        return {
-            changeStatus: changeStatus,
-            changeRoom: changeRoom
         }
     })();
 })();
