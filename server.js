@@ -58,14 +58,18 @@
     }
 
     function joinRoom(socket, room) {
-        notifyOldRoom(socket, room);
-        socket.join(room);
-        currentRoom[socket.id] = room;
-        socket.emit("currentroom",{room : toTitleCase(room)});
-        socket.broadcast.to(room).emit("joinedroom", {message : nickName[socket.id] + "has joined the "+ room});
+        room = toTitleCase(room);
+        if(currentRoom[socket.id] !== room) {
+            notifyOldRoom(socket, room);
+            socket.join(room);
+            currentRoom[socket.id] = room;
+            socket.emit("currentroom", {room: room});
+            socket.broadcast.to(room).emit("joinedroom", {message: nickName[socket.id] + " has joined the " + room});
+        }
     }
 
     function notifyOldRoom(socket, room) {
+        room = toTitleCase(room);
         if(room === "")
         {
             joinRoom(socket, "Lobby");
@@ -75,8 +79,8 @@
             var oldRoom = currentRoom[socket.id];
             socket.broadcast.to(oldRoom).emit("joinedroom", {message : nickName[socket.id] + " has left the " + oldRoom});
             socket.leave(oldRoom);
-            if(rooms.indexOf(toTitleCase(room)) === -1) {
-                rooms.push(toTitleCase(room));
+            if(rooms.indexOf(room) === -1) {
+                rooms.push(room);
                 showRooms();
             }
         }

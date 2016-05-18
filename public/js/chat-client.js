@@ -19,6 +19,7 @@
                 $nickname.text("Hi " + data.nickname);
             });
             socket.on("currentroom", function (data) {
+                $chatWindow.text("");
                 $roomName.text("Current Room - " + data.room);
             });
             socket.on("joinedroom", function (data) {
