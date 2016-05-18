@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Node Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/default.css" type="text/css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="roomname" >
+        </div>
+        <div class="col-md-4">
+            <span id="nickname"></span>
+            <input type="button" id="status" value="Login" class="btn btn-primary" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" id="chatwindow" >
+        </div>
+        <div class="col-md-4" id="roomwindow">
+        </div>
+    </div>
+    <div class="row" id="chatform">
+        <div class="col-md-8">
+            <textarea id="chattext" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="col-md-4">
+            <button type="button" id="btnSubmit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+    </div>
+    <div class="row">
+        Use /r &lt;room_name&gt; for changing or adding the room<br>
+        Use /n &lt;nickname&gt; for changing the nickname
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script src="/js/chat-client.js" type="text/javascript" ></script>
+</body>
+</html>

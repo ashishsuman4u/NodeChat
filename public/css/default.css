@@ -1,0 +1,28 @@
+#roomname {
+    margin-bottom: 20px;
+    background-color: #999999;
+    color: #eeeeee;
+    height: 33px;
+    font-weight: bold;
+    font-size: medium;
+}
+#chatform {
+    margin-top: 20px;
+}
+#chatwindow {
+    background-color: #999999;
+    color: #eeeeee;
+    height: 400px;
+}
+
+#roomwindow {
+    background-color: #006666;
+    color: #eeeeee;
+    height: 400px;
+}
+
+#roomwindow a {
+    color: #eeeeee;
+    height: 400px;
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "nodechat",
+  "version": "1.0.0",
+  "description": "This will be the node based chatting application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "chat",
+    "socketio"
+  ],
+  "author": "Ashish Suman",
+  "license": "MIT",
+  "dependencies": {
+    "node-static": "^0.7.7",
+    "socket.io": "^1.4.6"
+  }
+}
